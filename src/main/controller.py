@@ -1,10 +1,7 @@
-from flask import Flask
+from flask import Blueprint
 
-app = Flask(__name__)
-
-@app.route('/')
+endpoint_blueprints = Blueprint('endpoints', __name__)
+print(' from blueprint ', __name__)
+@endpoint_blueprints.route('/')
 def index():
     return "HELLO WORLD"
-
-if __name__ == '__main__':
-    app.run(debug=True)
